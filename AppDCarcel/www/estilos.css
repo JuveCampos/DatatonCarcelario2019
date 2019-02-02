@@ -1,0 +1,99 @@
+/*div#wcLabel {display: none;}*/
+
+
+                          /*.well {background-color: red;}*/
+
+                          @import url('https://fonts.googleapis.com/css?family=Karla|Source+Serif+Pro|Ultra');
+
+                                   /*.content-wrapper {
+                                   background-color: white !important;}*/
+
+                                   .boxed {
+                                     border: 1px solid red;
+
+                                   }
+
+
+                                   label, input, button, select {
+                                   font-family: 'Karla', sans-serif;
+                                   font-color = #ffffff;
+                                   font-size: 14pt;
+                                   }
+
+                                  /* Color de fondo  #46bcd6*/
+                                  .content-wrapper {
+                                  background-color: #b62f3e !important;
+                                  }
+
+                          .box.box-solid.box-warning>.box-header {
+                                   color:#000000;
+                                   font-color = #000000; /*Color de letra de la caja*/
+                                   -webkit-text-stroke: 1px black;
+                                   /*text-shadow: 3px 2px black;*/
+                                   background:white;
+                                   background-color: #ffe728;
+                                   font-family: 'Karla', sans-serif;
+                                   text-align:center;
+                                   }
+
+                          .box.box-solid.box-warning {
+                                   color:#606060;
+                                   background-color:white;
+                                   border-color:white;
+                                   }
+
+                          h1 {
+                            color: white;
+                            /*text-shadow: 3px 2px black;*/
+                           }
+
+                           h2 {
+                             color: white;
+                             /*text-shadow: 2px px black;*/
+                            }
+
+                           h4 {
+                            color: white;
+                           }
+
+
+                                                       li span {
+                                                       font-family: 'Karla', sans-serif;
+                                                       font-size: 15px;
+                                                       font-color:#606060;
+
+                                                       }
+
+                                                       li {
+                                                                                          font-family: 'Karla', sans-serif;
+                                                                                          font-size: 16px;
+                                                                                          padding-top: 0px;
+                                                                                          padding-botton: 0px;
+                                                                                          border:1px;
+                                                                                          line-height: 1.7;
+                                                                                          font-color:#606060;
+
+                                                                                     }
+
+                              p {
+                              text-indent: 0px;
+                              font-family: 'Karla', sans-serif;
+                              font-size: 12pt;
+                              font-color: 'white';
+                              color: #000000;
+                              text-align:justify;
+                              padding-top: 5px;
+                              padding-botton: 10px;
+                              padding-right:190px;
+                              padding-left:70px;
+                              }
+
+                              img {
+                              display: block;
+                              margin-left: auto;
+                              margin-right: auto;
+                              }
+
+                              body {
+                                    color: white;
+                                    }
