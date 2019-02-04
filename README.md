@@ -10,6 +10,7 @@ Se creó un índice de calificación de las condiciones de vida de las personas 
 ## Información Técnica
 
 Análisis de los datos elaborado en Python. Visualización de datos en platadorma de _R - Shiny_. 
+Librerias de R utilizadas: shiny, shinydashboard, dplyr, ggplot2, plotly, leaflet y readr.
 
 Mayor información en la presentación anexa _Presentacion Dataton(1).pptx_.
 
