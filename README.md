@@ -1,5 +1,5 @@
 # DatatonCarcelario2019
-Proyecto presentado al Dataton Carcelario 1 de Febrero 2019
+Proyecto presentado al Dataton Carcelario el 1 de Febrero del 2019.
 
 ## Resumen
 
