@@ -13,7 +13,7 @@ Mayor información en la presentación anexa _Presentacion Dataton(1).pptx_.
 
 Para cualquier duda o asunto relacionado con este proyecto favor de notificarlo a _juveroark@gmail.com_
 
-**Autores: **
+**Autores:**
 
 * Juan Javier Santos Ochoa, 
 
