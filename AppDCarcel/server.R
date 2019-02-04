@@ -7,7 +7,7 @@ shinyServer(function(input, output, session) {
     closeOnEsc = TRUE,
     closeOnClickOutside = TRUE,
     html = FALSE,
-    #type = "success",
+    #type = "success", # Se silencio esta linea... lo que hace es mostrar una palomita en la parte superior de la ventana de bienvenida
     showConfirmButton = TRUE,
     showCancelButton = FALSE,
     confirmButtonText = "Continuar",
@@ -21,7 +21,7 @@ shinyServer(function(input, output, session) {
   
   # P D F 
   output$pdfview <- renderUI({
-    tags$iframe(style="height:600px; width:100%", src="Presentacion Dataton.pdf")
+    tags$iframe(style="height:600px; width:100%", src="PresentacionDataton2.pdf")
   })
   
   output$pdfview_1 <- renderUI({
@@ -36,45 +36,13 @@ shinyServer(function(input, output, session) {
   output$tablaEEnt <- DT::renderDataTable({
     DTtablas(ie_general[,c(93,3:92)], f_I = 1, f_D = 0) %>% DT::formatRound(columns = names(ie_ent[,c(3:92)]), digits = 3)
   })
-  
-  output$tablaEFed <- DT::renderDataTable({
-    DTtablas(ie_federal[,c(93,3:92)])
-  })
-  
-  output$tablaEGen <- DT::renderDataTable({
-    DTtablas(ie_ent[,c(93,3:92)])
-  })
-  
-  output$tablaEHom <- DT::renderDataTable({
-    DTtablas(ie_ent[,c(93,3:92)])
-  })
-  
-  output$tablaEMuj <- DT::renderDataTable({
-    DTtablas(ie_ent[,c(93,3:92)])
-  })
-  
+
 ###
-  
-  output$tablaMEnt <- DT::renderDataTable({
-    DTtablas(im_ent[,c(11,3:10)]) 
-  })
-  
-  output$tablaMFed <- DT::renderDataTable({
-    DTtablas(im_federal[,c(11,3:10)])
-  })
-  
+
   output$tablaMGen <- DT::renderDataTable({
     DTtablas(im_general[,c(11,3:10)], f_I = 1, f_D = 0) %>% DT::formatRound(columns = names(im_general[,c(3:10)]), digits = 3)
   })
-  
-  output$tablaMHom <- DT::renderDataTable({
-    DTtablas(im_hombres[,c(11,3:10)])
-  })
-  
-  output$tablaMMuj <- DT::renderDataTable({
-    DTtablas(im_mujeres[,c(11,3:10)])
-  })
-  
+
   ########
   # IMGs #
   ########
@@ -160,19 +128,9 @@ output$img1 <- renderImage({
   #######
   # U I #
   ######
-  
-# selector_part$Pparticular[selector_part$grupo == "P8_2"]  
-# #selector_part$grupo[which(selector_gral$Pgeneral == "8.2 Durante 2016, un servidor público, empleado del gobierno o custodio: ")]  
-# selector_gral$Grupo[which(selector_gral$Pgeneral == selector_gral$Pgeneral[1])]  
-# 
-# selector_gral$Grupo[1]
-# selector_gral$Pgeneral[1]  
-  
-selector_part$grupo == "P6_17"
-  
+
 output$selPart1 <- renderUI({
       # importanteeee!!!      
-      # selector_part$indice[which(selector_part$Pparticular == selector_part$Pparticular[5])]
       selectInput("selPEEnt", "Seleccione Pregunta Particular ENPOL", choices =
                   selector_part$Pparticular[selector_part$grupo == selector_gral$Grupo[which(selector_gral$Pgeneral == input$selGEEnt)]] )
   })
@@ -188,8 +146,6 @@ output$selPart1 <- renderUI({
                     "<b>Variable: </b>", input$selPEEnt, "<br>", 
                     "<b>Valor: </b>", specify_decimal(base$VAR, 3))
     
-    #input$selPEEnt
-    
     m <- ggplot(data = base, aes(x = reorder(ENTIDAD, -VAR), y = VAR, text = popup)) + 
       geom_bar(stat="identity", fill = "#b62f3e") + 
       coord_flip() +  ggtitle("Proporción de la Población Carcelaria <br>que respondió afirmativamente a la pregunta<br>") + 
@@ -203,7 +159,6 @@ output$selPart1 <- renderUI({
 
 output$graficaDimension <- renderPlotly({
     
-  
   print(input$selectDim)
   base <- im_general[,c('ENTIDAD', input$selectDim)] %>%
     mutate(ENTIDAD = as.character(ENTIDAD))
@@ -212,9 +167,7 @@ output$graficaDimension <- renderPlotly({
   popup <- paste0("<b>Entidad Federativa: </b>", base$ENTIDAD, "<br>", 
                     "<b>Valor: </b>", specify_decimal(base$DIM, 3))
     
-    #input$selPEEnt
-    
-    m <- ggplot(data = base, aes(x = reorder(ENTIDAD, -DIM), y = DIM, text = popup)) + 
+  m <- ggplot(data = base, aes(x = reorder(ENTIDAD, -DIM), y = DIM, text = popup)) + 
       geom_bar(stat="identity", fill = "#b62f3e") + 
       coord_flip() +  
       ggtitle(paste0("Calificación de las Entidades en la dimensión seleccionada<br>", input$selectDim)) + 
@@ -223,50 +176,12 @@ output$graficaDimension <- renderPlotly({
     ggplotly(m, tooltip = 'text') %>%
       layout(showlegend = FALSE) %>%
       config(displayModeBar = F)  
-    
   })
   
-  # TABLA DE 
-  output$tabla1 <- DT::renderDataTable({
-    DTtablas(BD[[1]]) 
-  })
-  
-  output$tabla2 <- DT::renderDataTable({
-    DTtablas(BD[[2]])
-  })
-  
-  output$tabla3 <- DT::renderDataTable({
-    DTtablas(BD[[3]])
-  })
-  
-  output$tabla4 <- DT::renderDataTable({
-    DTtablas(BD[[4]])
-  })
-  
-  output$tabla5 <- DT::renderDataTable({
-    DTtablas(BD[[5]])
-  })
-  
-  output$tabla6 <- DT::renderDataTable({
-   
-    DT::datatable(BD[[6]], 
-                  #extensions = 'FixedColumns',
-                  rownames= FALSE,
-                  options = list(
-                    pageLength = 15,
-                    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json'),
-                    autoWidth = TRUE, 
-                    scroller = TRUE,
-                    #fixedColumns = list(leftColumns = f_I, rightColumns = f_D),
-                    scrollX = TRUE,
-                    escape = T) 
-    ) %>% DT::formatRound(columns = names(BD[[6]][c(-1)]), digits = 3)
-    
-  })
-  
-  
-  
-  output$mapa_final <- renderLeaflet({
+# Este es el codigo del Mapa... seguramente hay formas mas sencillas de hacerlo pero por las prisas
+  # no me di el tiempo de simplificarlo... trata de abarcar todos los casos posibles ante las dimensiones
+  # que pueden evaluarse en nuestro indice sintético.
+output$mapa_final <- renderLeaflet({
     
     var_interes <- input$selectDim
     
