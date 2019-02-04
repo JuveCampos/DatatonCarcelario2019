@@ -11,7 +11,7 @@ Análisis de los datos elaborado en Python. Visualización de datos en platadorm
 
 Mayor información en la presentación anexa _Presentacion Dataton(1).pptx_.
 
-Para cualquier duda o asunto relacionado con este proyecto favor de notificarlo a _juvenal.campos@cide.edu_
+Para cualquier duda o asunto relacionado con este proyecto favor de notificarlo a _juveroark@gmail.com_
 
 **Autores: **
 
