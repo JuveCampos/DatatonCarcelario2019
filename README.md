@@ -1,8 +1,6 @@
 # DatatonCarcelario2019
 Proyecto presentado al Dataton Carcelario el 1 de Febrero del 2019.
 
-Puede consultarse en https://lnppmicrositio.shinyapps.io/datatoncarcelario/ 
-
 ## Resumen
 
 Se creó un índice de calificación de las condiciones de vida de las personas en prisión a nivel estado, un sistema de consulta de las preguntas de la ENPOL relacionadas con la corrupción, y mostramos como son las condiciones de vida de prisioneros y custodios en las carceles con peores condiciones en México.
